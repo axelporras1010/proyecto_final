@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\UserEditRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -19,8 +21,14 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
+        // $request->validate([
+        //     'name' => 'required|min:3|max:20',
+        //     'username' => 'required',
+        //     'email' => 'required|email|unique:users',
+        //     'password' => 'required'
+        // ]);
         $user = User::create($request->all());
         return redirect()->route('users.show', $user->id)->with('success','Usuario creado correctamente');
     }
@@ -36,7 +44,7 @@ class UserController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(Request $request, User $user)
+    public function update(UserEditRequest $request, User $user)
     {
         // $user = User::findOrFail($id);
         $data = $request->only('name','username','email');

@@ -17,21 +17,30 @@
                             <div class="row">
                                 <label for="name" class="col-sm-2 col-form-label">Nombre</label>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="name" value="{{$user->name}}" autofocus>
+                                    <input type="text" class="form-control" name="name" value="{{ old('name', $user->name) }}" autofocus>
+                                    @if ($errors->has('name'))
+                                        <span class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
+                                    @endif
                                 </div>
                             </div>
                             <!-- Username -->
                             <div class="row">
                                 <label for="username" class="col-sm-2 col-form-label">Nombre de Usuario</label>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="username" value="{{$user->username}}">
+                                    <input type="text" class="form-control" name="username" value="{{ old('username', $user->username) }}">
+                                    @if ($errors->has('username'))
+                                        <span class="error text-danger" for="input-username">{{ $errors->first('username') }}</span>
+                                    @endif
                                 </div>
                             </div>
                             <!-- Email -->
                             <div class="row">
                                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                                 <div class="col-sm-7">
-                                    <input type="email" class="form-control" name="email" value="{{$user->email}}">
+                                    <input type="email" class="form-control" name="email" value="{{ old('name', $user->email) }}">
+                                    @if ($errors->has('email'))
+                                        <span class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
+                                    @endif
                                 </div>
                             </div>
                             <!-- password -->
@@ -39,6 +48,9 @@
                                 <label for="password" class="col-sm-2 col-form-label">Password</label>
                                 <div class="col-sm-7">
                                     <input type="password" class="form-control" name="password" placeholder="Ingresa la password para editarla">
+                                    @if ($errors->has('password'))
+                                        <span class="error text-danger" for="input-password">{{ $errors->first('password') }}</span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
