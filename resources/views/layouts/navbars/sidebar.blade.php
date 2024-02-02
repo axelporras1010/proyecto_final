@@ -40,8 +40,14 @@
             </li>
             <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('users.index') }}">
-                <i class="material-icons">content_paste</i>
+                <i class="material-icons">perm_identity</i>
                 <span class="sidebar-normal"> Usuarios </span>
+              </a>
+            </li>
+            <li class="nav-item{{ $activePage == 'posts' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('posts.index') }}">
+                <i class="material-icons">library_books</i>
+                  <p>{{ __('Post') }}</p>
               </a>
             </li>
           </ul>
@@ -50,7 +56,7 @@
       @can('user_index')
       <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('users.index') }}">
-          <i class="material-icons">content_paste</i>
+          <i class="material-icons">perm_identity</i>
             <p>Usuarios</p>
         </a>
       </li>
