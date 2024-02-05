@@ -21,13 +21,19 @@
                 <div class="col-sm-7">
                   <input type="text" class="form-control" name="title" placeholder="Ingrese el titulo del post"
                     autocomplete="off" autofocus>
+                  @if ($errors->has('title'))
+                      <span class="error text-danger" for="input-title">{{ $errors->first('title') }}</span>
+                  @endif
                 </div>
               </div>
               <div class="row">
                 <label for="title" class="col-sm-2 col-form-label">Contenido del post</label>
                 <div class="col-sm-7">
-                  <textarea type="text" class="form-control" name="description" placeholder="Ingrese la descripcion del post"
-                    autocomplete="off" autofocus></textarea>
+                  <input type="text" class="form-control" name="description" placeholder="Ingrese la descripcion del post"
+                    autocomplete="off" autofocus></input>
+                  @if ($errors->has('description'))
+                      <span class="error text-danger" for="input-description">{{ $errors->first('description') }}</span>
+                  @endif
                 </div>
               </div>
             </div>

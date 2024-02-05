@@ -47,11 +47,17 @@
             <li class="nav-item{{ $activePage == 'posts' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('posts.index') }}">
                 <i class="material-icons">library_books</i>
-                  <p>{{ __('Post') }}</p>
+                  <p>{{ __('Posts') }}</p>
               </a>
             </li>
           </ul>
         </div>
+      </li>
+      <li class="nav-item{{ $activePage == 'permissions' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('permissions.index') }}">
+          <i class="material-icons">key</i>
+          <p>{{ __('Permissions') }}</p>
+        </a>
       </li>
       @can('user_index')
       <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">

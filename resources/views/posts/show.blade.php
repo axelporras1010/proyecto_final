@@ -13,6 +13,11 @@
           <!--End header-->
           <!--Body-->
           <div class="card-body">
+            @if((session('success')))
+              <div class="alert alert-success" role="success">
+                  {{ session('success') }}
+              </div>
+            @endif
             <div class="row">
               <!-- first -->
               <div class="col-md-12">

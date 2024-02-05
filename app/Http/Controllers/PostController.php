@@ -42,9 +42,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        Post::create($request->all());
-
-        return redirect()->route('posts.index');
+        $post = Post::create($request->validate([
+            'title' => 'required',
+            'description' => 'required'
+        ]));
+        return redirect()->route('posts.show', $post->id)->with('success','Post creado correctamente');
     }
 
     /**
@@ -80,12 +82,15 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
-    {
-        $post->update($request->all());
+        public function update(Request $request, Post $post)
+        {
 
-        return redirect()->route('posts.index');
-    }
+            $post->update($request->validate([
+                'title' => 'required|min:3',
+                'description' => 'required'
+            ]));
+            return redirect()->route('posts.index', $post->id)->with('success','Post editado correctamente');
+        }
 
     /**
      * Remove the specified resource from storage.

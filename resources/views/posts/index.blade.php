@@ -10,6 +10,11 @@
                 <p class="card-category">Lista de posts registrados en la base de datos</p>
               </div>
               <div class="card-body">
+              @if((session('success')))
+              <div class="alert alert-success" role="success">
+                  {{ session('success') }}
+              </div>
+              @endif
                 <div class="row">
                   <div class="col-12 text-right">
                     <a href="{{ route('posts.create') }}" class="btn btn-sm btn-facebook">Añadir post</a>
