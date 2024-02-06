@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        // abort_if(Gate::denies('post_index'), 403);
+        abort_if(Gate::denies('post_index'), 403);
 
         $posts = Post::paginate(5);
         return view('posts.index', compact('posts'));
@@ -29,7 +29,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        // abort_if(Gate::denies('post_create'), 403);
+        abort_if(Gate::denies('post_create'), 403);
 
         return view('posts.create');
     }
@@ -57,7 +57,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        // abort_if(Gate::denies('post_show'), 403);
+        abort_if(Gate::denies('post_show'), 403);
 
         return view('posts.show', compact('post'));
     }
@@ -70,7 +70,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        // abort_if(Gate::denies('post_edit'), 403);
+        abort_if(Gate::denies('post_edit'), 403);
 
         return view('posts.edit', compact('post'));
     }
@@ -100,7 +100,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        // abort_if(Gate::denies('post_delete'), 403);
+        abort_if(Gate::denies('post_delete'), 403);
 
         $post->delete();
 

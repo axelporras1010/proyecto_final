@@ -33,11 +33,15 @@
                                                     {{ $user->email }} <br>
                                                     {{ $user->created_at }} <br>
                                                 </p>
+                                                <div class="card-descr  ">
+                                                    @forelse($user->roles as $role)
+                                                        <span class="badge badge-info">{{ $role->name }}</span>
+                                                    @empty
+                                                        <span class="badge badge-danger">No roles</span>
+                                                    @endforelse
+                                                </div>
                                             </div>
                                         </p>
-                                        <div class="card-descr">
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos ex quo porro iste enim consequatur ipsa expedita deserunt aperiam, minima impedit quod distinctio omnis, magnam hic nisi animi maiores vel?
-                                        </div>
                                     </div>
                                     <div class="card-footer">
                                         <div class="button-container">

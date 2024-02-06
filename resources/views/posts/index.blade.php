@@ -17,10 +17,9 @@
               @endif
                 <div class="row">
                   <div class="col-12 text-right">
-                    <a href="{{ route('posts.create') }}" class="btn btn-sm btn-facebook">Añadir post</a>
-                    <!-- @can('post_create')
-                    <a href="{{ route('posts.create') }}" class="btn btn-sm btn-facebook">Añadir post</a>
-                    @endcan -->
+                    @can('post_create')
+                      <a href="{{ route('posts.create') }}" class="btn btn-sm btn-facebook">Añadir post</a>
+                    @endcan
                   </div>
                 </div>
                 <div class="table-responsive">
@@ -38,21 +37,9 @@
                         <td>{{ $post->title }}</td>
                         <td class="text-primary">{{ $post->created_at->toFormattedDateString() }}</td>
                         <td class="td-actions text-right">
-                          <a href="{{ route('posts.show', $post->id) }}" class="btn btn-info"> <i
-                                class="material-icons">library_books</i> </a>
-                          <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-success"> <i
-                                class="material-icons">edit</i> </a>
-                          <form action="{{ route('posts.destroy', $post->id) }}" method="post"
-                                onsubmit="return confirm('areYouSure')" style="display: inline-block;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" rel="tooltip" class="btn btn-danger">
-                                  <i class="material-icons">close</i>
-                                </button>
-                          </form>
-                          <!-- @can('post_show')
+                          @can('post_show')
                             <a href="{{ route('posts.show', $post->id) }}" class="btn btn-info"> <i
-                                class="material-icons">person</i> </a>
+                                class="material-icons">library_books</i> </a>
                           @endcan
                           @can('post_edit')
                             <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-success"> <i
@@ -67,7 +54,7 @@
                                 <i class="material-icons">close</i>
                               </button>
                             </form>
-                          @endcan -->
+                          @endcan
                         </td>
                       </tr>
                       @empty

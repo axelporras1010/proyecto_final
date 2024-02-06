@@ -18,9 +18,8 @@
             @endif
             <div class="row">
               <div class="col-12 text-right">
-                <a href="{{ route('roles.create') }}" class="btn btn-sm btn-facebook">Añadir nuevo rol</a>
                 @can('role_create')
-                <!-- <a href="{{ route('roles.create') }}" class="btn btn-sm btn-facebook">Añadir nuevo rol</a> -->
+                  <a href="{{ route('roles.create') }}" class="btn btn-sm btn-facebook">Añadir nuevo rol</a>
                 @endcan
               </div>
             </div>
@@ -49,19 +48,7 @@
                       @endforelse
                     </td>
                     <td class="td-actions text-right">
-                    <a href="{{ route('roles.show', $role->id) }}" class="btn btn-info"> <i
-                          class="material-icons">account_box</i> </a>
-                    <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-success"> <i
-                          class="material-icons">edit</i> </a>
-                    <form action="{{ route('roles.destroy', $role->id) }}" method="post"
-                        onsubmit="return confirm('areYouSure')" style="display: inline-block;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" rel="tooltip" class="btn btn-danger">
-                            <i class="material-icons">close</i>
-                        </button>
-                    </form>
-                    <!-- @can('role_show')
+                    @can('role_show')
                       <a href="{{ route('roles.show', $role->id) }}" class="btn btn-info"> <i
                           class="material-icons">person</i> </a>
                     @endcan
@@ -78,7 +65,7 @@
                           <i class="material-icons">close</i>
                         </button>
                       </form>
-                    @endcan -->
+                    @endcan
                     </td>
                   </tr>
                   @empty

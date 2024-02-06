@@ -12,15 +12,6 @@
                             <p class="card-category">Ingresar datos</p>
                         </div>
                         <div class="card-body">
-                            <!-- @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif -->
                             <!-- Nombre -->
                             <div class="row">
                                 <label for="name" class="col-sm-2 col-form-label">Nombre</label>
@@ -59,6 +50,38 @@
                                     @if ($errors->has('password'))
                                         <span class="error text-danger" for="input-name">{{ $errors->first('password') }}</span>
                                     @endif
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="roles" class="col-sm-2 col-form-label">Roles</label>
+                                <div class="colr-sm-7">
+                                    <div class="form-group">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active">
+                                                <table class="table">
+                                                    <tbody>
+                                                        @foreach($roles as $id => $role)                                            
+                                                        <tr>
+                                                            <td>
+                                                                <div class="form-check">
+                                                                    <label class="form-check-label">
+                                                                        <input type="checkbox" class="form-check-input" name="roles[]" value="{{ $id }}">
+                                                                        <span class="form-check-sign">
+                                                                            <span class="check"></span>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                               {{  $role }}
+                                                            </td>
+                                                        </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
