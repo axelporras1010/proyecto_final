@@ -50,6 +50,12 @@
                   <p>{{ __('Posts') }}</p>
               </a>
             </li>
+            <li class="nav-item{{ $activePage == 'roles' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('roles.index') }}">
+                <i class="material-icons">account_box</i>
+                  <p>{{ __('Roles') }}</p>
+              </a>
+            </li>
           </ul>
         </div>
       </li>

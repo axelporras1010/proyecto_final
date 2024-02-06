@@ -31,13 +31,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('posts', App\Http\Controllers\PostController::class);
 
     Route::resource('permissions', App\Http\Controllers\PermissionController::class);
+    Route::resource('roles', App\Http\Controllers\RoleController::class);
 });
 
-// Route::get('/posts/create', [App\Http\Controllers\PostController::class, 'create'])->name('posts.create');
-// Route::post('/posts', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
-// Route::get('/posts', [App\Http\Controllers\PostController::class, 'index'])->name('posts.index');
-// Route::get('/posts/{post}', [App\Http\Controllers\PostController::class, 'show'])->name('posts.show');
-// Route::get('/posts/{posts}/edit', [App\Http\Controllers\PostController::class, 'edit'])->name('posts.edit');
-// Route::put('/posts/{post}', [App\Http\Controllers\PostController::class, 'update'])->name('posts.update');
-// Route::delete('/posts/{post}', [App\Http\Controllers\PostController::class, 'destroy'])->name('posts.destroy');
+
 

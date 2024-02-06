@@ -34,9 +34,6 @@
                                                 </p>
                                             </div>
                                         </p>
-                                        <div class="card-descr">
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos ex quo porro iste enim consequatur ipsa expedita deserunt aperiam, minima impedit quod distinctio omnis, magnam hic nisi animi maiores vel?
-                                        </div>
                                     </div>
                                     <div class="card-footer">
                                         <div class="button-container">
