@@ -29,7 +29,7 @@
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{{ route('profile.show') }}">
                 <span class="sidebar-mini"> <i class="fa-solid fa-user"></i> </span>
                 <span class="sidebar-normal">{{ __('Mi perfil') }} </span>
               </a>

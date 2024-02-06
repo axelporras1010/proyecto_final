@@ -31,7 +31,11 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('posts', App\Http\Controllers\PostController::class);
 
     Route::resource('permissions', App\Http\Controllers\PermissionController::class);
+
     Route::resource('roles', App\Http\Controllers\RoleController::class);
+
+    Route::get('/profile/show', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
+    
 });
 
 
