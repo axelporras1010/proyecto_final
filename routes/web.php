@@ -35,6 +35,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('roles', App\Http\Controllers\RoleController::class);
 
     Route::get('/profile/show', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
+
+    Route::resource('horarios', App\Http\Controllers\HorariosController::class);
+
     
 });
 

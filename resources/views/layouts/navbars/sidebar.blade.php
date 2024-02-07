@@ -66,6 +66,14 @@
               </a>
             </li>
             @endcan
+            @can('horario_index')
+            <li class="nav-item{{ $activePage == 'horarios' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('horarios.index') }}">
+                <i class="material-icons">timer</i>
+                <p>{{ __('Horarios') }}</p>
+              </a>
+            </li>
+            @endcan
           </ul>
         </div>
       </li>

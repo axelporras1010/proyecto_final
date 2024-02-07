@@ -37,6 +37,12 @@ class PermissionSeeder extends Seeder
             'post_show',
             'post_edit',
             'post_destroy',
+
+            'horario_index',
+            'horario_create',
+            'horario_show',
+            'horario_edit',
+            'horario_destroy',
         ];
 
         foreach ($permissions as $permission){

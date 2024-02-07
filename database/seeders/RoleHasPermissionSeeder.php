@@ -29,7 +29,9 @@ class RoleHasPermissionSeeder extends Seeder
         //Estudiante
         $estudiante_permissions = $admin_permissions->filter(function ($permission) {
             return $permission->name == 'post_index' ||
-                $permission->name == 'post_show';
+                $permission->name == 'post_show'  ||
+                $permission->name == 'horario_index'  ||
+                $permission->name == 'horario_show';
         });
         Role::findOrFail(3)->permissions()->sync($estudiante_permissions->pluck('id'));
     }
