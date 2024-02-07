@@ -34,17 +34,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link links" href="#">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link links" href="#">Planes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link links" href="#">Sobre Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link links" href="#">Contacto</a>
                         </li>
                         <li class="nav-item">
                             @if (Route::has('login'))
@@ -61,34 +50,77 @@
             </div>
         </nav>
 
-        <div class="container-fluid mt-5">
+        <div class="container-fluid mt-5 " >
             <div class="row">
-                <div class="col-md-8 offset-md-2 text-center">
+                <div class="col-md-8 offset-md-2 text-center" id="mi-div">
                     <h1 class="main-title">Bienvenido a Yeka Coach Academy</h1>
-                    <p class="lead">La mejor academia para aprender a cantar.</p>
+                    <p class="lead">¡Hola! Soy Yeka Coach
+                            Apasionada vocal coach y creadora de contenido con más de 15 años de experiencia en el emocionante mundo del canto y el desarrollo vocal.</p>
                 </div>
             </div>
 
+
+
+            
+
             <div class="row mt-5">
-                <div class="col-md-4 offset-md-2">
+                <div class="col-md-8 offset-md-2">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title text-dark">¿Por qué elegirnos?</h5>
-                            <p class="card-text text-dark">Ofrecemos clases de canto de alta calidad impartidas por profesionales con amplia experiencia en la industria musical.</p>
+                            <img src="{{ asset('img/yekafoto.png') }}" alt="" class="imagen-edit">
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-dark">Nuestros cursos</h5>
-                            <p class="card-text text-dark">Tenemos una variedad de cursos diseñados para satisfacer las necesidades de todos, desde principiantes hasta avanzados.</p>
-                        </div>
-                    </div>
+              
+            </div>
+            <div class="row mt-5">
+            <!-- <div class="col-md-8 offset-md-2">
+                <div class="col">
+                        <h5 class="card-title text-dark">Sobre Mí</h5>
+                        <p class="card-text text-dark">Desde que era una niña el canto ha sido mi refugio y mi inspiración. Crecí cantando en todos los rincones posibles y soñando con un futuro en el que algún día podría llevar mi voz a todo el mundo. Ese sueño se convirtió en realidad cuando decidí iniciar en la enseñanza del canto donde me he encargado de crear una forma innovadora, divertida y efectiva para transmitir todo mi conocimiento.</p>
                 </div>
+                <div class="col">
+                <img src="{{ asset('img/Yeka.jpg') }}" alt="" class="yeka">
+                            
+                </div>
+            </div> -->
+              
             </div>
         </div>
     </div>
+
+    <div class="container-fluid mt-5 " >
+            <!-- <div class="row mt-5">
+                <div class="col-md-8 offset-md-2 text-center" id="mi-div">
+                    <h1 class="main-title">Bienvenido a Yeka Coach Academy</h1>
+                    <p class="lead">¡Hola! Soy Yeka Coach
+                            Apasionada vocal coach y creadora de contenido con más de 15 años de experiencia en el emocionante mundo del canto y el desarrollo vocal.</p>
+                </div>
+            </div>
+
+            <div class="row mt-5 mb-5 ">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('img/yekafoto.png') }}" alt="" class="imagen-edit">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row mt-5">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card">
+                        <div class="card-body">
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+
+
     <footer class="bg-dark text-white text-center py-4 mt-5 footer">
         <div class="container">
             <p>&copy; {{ date('Y') }} Yeka Coach Academy. Todos los derechos reservados.</p>
