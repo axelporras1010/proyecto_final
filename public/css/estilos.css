@@ -1,0 +1,20 @@
+.body-personalizado{
+    background-color: rgb(4, 4, 4) !important;
+    color: rgba(255, 255, 255, 0.955);
+    
+}
+
+
+
+.links{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 90vw;
+}
+
+.LogoHome{
+    width: 200px;
+}
