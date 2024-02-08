@@ -43,8 +43,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = Post::create($request->validate([
-            'title' => 'required',
-            'description' => 'required'
+            'title' => 'required|min:3|max:50',
+            'description' => 'required|max:240'
         ]));
         return redirect()->route('posts.show', $post->id)->with('success','Post creado correctamente');
     }
@@ -86,8 +86,8 @@ class PostController extends Controller
         {
 
             $post->update($request->validate([
-                'title' => 'required|min:3',
-                'description' => 'required'
+                'title' => 'required|min:3|max:50',
+                'description' => 'required|max:240'
             ]));
             return redirect()->route('posts.index', $post->id)->with('success','Post editado correctamente');
         }

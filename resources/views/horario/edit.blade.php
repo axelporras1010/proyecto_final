@@ -45,10 +45,11 @@
               <div class="row">
                   <label for="dia_semana" class="col-sm-2 col-form-label">Descripcion</label>
                   <div class="col-sm-7">
-                      <input type="text" class="form-control" name="descripcion" placeholder="Descripcion" value="{{ old('descripcion') }}">
-                      @if ($errors->has('descripcion'))
-                          <span class="error text-danger" for="input-dia_semana">{{ $errors->first('descripcion') }}</span>
-                      @endif
+                      <input type="text" class="form-control" name="descripcion" placeholder="Descripcion" 
+                      value="{{ old('descripcion', $horario->descripcion) }}" autocomplete="off" autofocus>
+                    @if ($errors->has('descripcion'))
+                        <span class="error text-danger" for="input-descripcion">{{ $errors->first('descripcion') }}</span>
+                    @endif
                   </div>
               </div>
               <div class="row">
