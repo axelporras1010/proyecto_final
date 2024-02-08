@@ -27,13 +27,7 @@ class HorariosController extends Controller
 
     public function store(Request $request)
     {
-        $horarios = Horario::create($request->validate([
-            'profesor_id' => 'required',
-            'dia_semana' => 'required|min:3|max:12',
-            'description' => 'required|max:240',
-            'hora_inicio' => 'required',
-            'hora_fin' => 'required',
-        ]));
+        $horarios = Horario::create($request->all()); 
         return redirect()->route('horarios.show', $horarios->id)->with('success','Horario creado correctamente');
     }
 
@@ -53,14 +47,7 @@ class HorariosController extends Controller
 
     public function update(Request $request, Horario $horario)
     {
-       
-        $horarios = Horario::create($request->validate([
-            'profesor_id' => 'required',
-            'dia_semana' => 'required|min:3|max:12',
-            'description' => 'required|max:240',
-            'hora_inicio' => 'required',
-            'hora_fin' => 'required',
-        ]));
+        $horario->update($request->all()); 
         return redirect()->route('horarios.show', $horario->id)->with('success', 'Horario actualizado correctamente');
     }
 
