@@ -21,7 +21,6 @@
                                         @foreach($users as $user)
                                             @if($user->hasRole('Profesor'))
                                                 <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                                <input type="hidden" name="profesor_nombre" value="{{ $user->name }}">
                                             @endif
                                         @endforeach
                                     </select>

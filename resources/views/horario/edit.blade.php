@@ -22,7 +22,9 @@
                  <div class="col-sm-7">
                    <select name="profesor_id" class="form-control">
                      @foreach($users as $user)
-                       <option value="{{ $user->id }}" {{ $user->id == $horario->profesor_id ? 'selected' : '' }}>{{ $user->name }}</option>
+                        @if($user->hasRole('Profesor'))
+                          <option value="{{ $user->id }}" {{ $user->id == $horario->profesor_id ? 'selected' : '' }}>{{ $user->name }}</option>
+                        @endif
                      @endforeach
                    </select>
                    @if ($errors->has('profesor_id'))
