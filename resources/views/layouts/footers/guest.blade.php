@@ -7,7 +7,7 @@
         &copy;
         <script>
             document.write(new Date().getFullYear())
-        </script>, Made by Axel and Mafer
+        </script>, Yeka Coach Academy. Todos los derechos reservados.
         </div>
     </div>
 </footer>
